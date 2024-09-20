@@ -16,3 +16,4 @@ npx playwright test --headed --project Chromium
 npx playwright test --headed --project Mobile_Chrome
 
 ## run debug
+npx playwright test --debug
