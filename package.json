@@ -6,12 +6,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "test": "cross-env REPORT=true npx playwright test --config=playwright.config.js"
+  },
   "devDependencies": {
     "@playwright/test": "^1.47.1",
+    "@reportportal/agent-js-playwright": "^5.1.10",
     "@types/node": "^22.5.5",
     "superagent": "8.0.9"
   },
   "dependencies": {
-    "cookie": "^0.6.0"
+    "cookie": "^0.6.0",
+    "cross-env": "^7.0.3"
   }
 }

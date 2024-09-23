@@ -6,7 +6,6 @@ import { apiHelpers } from '../helpers/apiHelpers';
 import * as constants from '../test-data/constants';
 
 test.describe('login/logout', async () => {
-
   let homePage;
   let loginPage;
   let dashboardPage;
@@ -16,6 +15,10 @@ test.describe('login/logout', async () => {
     loginPage = new LoginPage(page);
     dashboardPage = new DashboardPage(page);
   });
+
+  test.afterEach(async ({ page }) => {
+    await apiHelpers.logoutCustomer();
+  })
 
   test('Login customer', async () => {
     await homePage.navigateToHomePage();
@@ -28,7 +31,7 @@ test.describe('login/logout', async () => {
     await dashboardPage.checkBalanceIsDisplayed();
   });
 
-  test('Logout customer', async () => {
+  test('Login customer from api', async () => {
     let res = await apiHelpers.loginCustomer(constants.portfolioMonitorCustomer)
     expect(res.statusCode).toEqual(200)
   });
