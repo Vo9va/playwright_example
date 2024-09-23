@@ -5,7 +5,7 @@ const REPORT = process.env.REPORT || '';
 
 export default defineConfig({
   testDir: './tests',
-  fullyParallel: false, // вкл полную паралельность, тоесть можна запускать все тесты паралеьно, если они независимые
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   reporter:  REPORT === 'true' ? [['@reportportal/agent-js-playwright', reportPortalHelper.getReportConfig()]] : '',
@@ -14,7 +14,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on',
-    workers: 3,  // паралеьность но нужно удалить fullyParallel или фолс поставить
+    workers: 3,  // паралеьность, работает при парметре тру в fullyParallel
   },
   projects: [
     {

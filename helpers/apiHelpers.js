@@ -9,11 +9,11 @@ class ApiHelpers {
       .send({ ...customer, ...params })
       .set(constants.HEADER.NAME, constants.HEADER.VALUE)
       .then((res) => {
-        reportPortalHelper.logInfo(`test, ${res.statusCode}`)
+        reportPortalHelper.logInfo(`loginCustomer, ${JSON.stringify(res.body)}`)
         return res;
       })
       .catch((err) => {
-        reportPortalHelper.logInfo(`fail`)
+        reportPortalHelper.logInfo(`loginCustomer, ${err}`)
         return err.response._body;
       });
   }
@@ -22,9 +22,11 @@ class ApiHelpers {
     return await agent
       .post(`https://api.stage-capitalix.com/auth/logout`)
       .then((res) => {
+        reportPortalHelper.logInfo(`logoutCustomer, ${JSON.stringify(res.body)}`)
         return res;
       })
       .catch((err) => {
+        reportPortalHelper.logInfo(`logoutCustomer, ${err}`)
         return err.response._body;
       });
   }
@@ -35,9 +37,11 @@ class ApiHelpers {
       .send({ ...customer, ...params })
       .set(constants.HEADER.NAME, constants.HEADER.VALUE)
       .then((res) => {
+        reportPortalHelper.logInfo(`createCustomer, ${JSON.stringify(res.body)}`)
         return res;
       })
       .catch((err) => {
+        reportPortalHelper.logInfo(`createCustomer, ${err}`)
         return err.response._body;
       });
   }

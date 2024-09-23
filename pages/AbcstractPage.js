@@ -10,11 +10,9 @@ export default class AbstractPage {
     return this.page.goto(link).catch((e) => this.errorHandling(e, this.page));
   }
 
-  async clickOnElement(selector, options = {}) {
+  async clickOnElement(selector) {
     return this.page
-      .locator(selector)
-      .first()
-      .click({ timeout: options.timeout, force: true })
+      .click(selector)
       .catch((e) => this.errorHandling(e, this.page));
   }
 

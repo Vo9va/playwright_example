@@ -6,7 +6,7 @@ export class DocumentsPage extends AbstractPage {
   }
 
   /** Locators **/
-  passwordDocumentButton = '//mat-radio-button[contains(@class, "next-radio")][contains(., "Passport")]';
+  passwordDocumentButton = '//mat-radio-group/mat-radio-button[@value="\'passport\'"]';
   uploadButton = '.file-link-wrapper'
   fileInput = 'input[type="file"]'
   /** Methods **/
