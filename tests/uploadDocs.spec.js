@@ -20,7 +20,7 @@ test.describe('Upload documents', () => {
     customer = customerData.getCustomerLead();
   });
 
-  test('Authorization by cookies', async ({ page }) => {
+  test('Authorization by cookies and upload document', async ({ page }) => {
     await apiHelpers.createCustomer(customer)
 
     await loginPage.setAuthCookiesAndOpenAssetsPage(customer, '/trade/account?accountTab=documents', 'registration');

@@ -30,7 +30,7 @@ export default class AbstractPage {
   }
 
   async uploadFileOnElement(selector, pathImage ) {
-    const filePath = path.resolve('C:/Users/User/WebstormProjects/playwright_example/test-data/images/document.jpg');
+    const filePath = path.resolve('./test-data/images/document.jpg');
     return this.page
       .locator(selector)
       .setInputFiles(filePath)
