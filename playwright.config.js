@@ -7,18 +7,17 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: 0,
   reporter:  REPORT === 'true' ? [['@reportportal/agent-js-playwright', reportPortalHelper.getReportConfig()]] : '',
   use: {
     baseURL: 'http://localhost/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'on',
+    // video: 'on',
     workers: 3,  // паралеьность, работает при парметре тру в fullyParallel
   },
   projects: [
     {
-      name: 'Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
     // {

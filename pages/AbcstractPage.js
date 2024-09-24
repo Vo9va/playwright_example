@@ -27,7 +27,7 @@ export default class AbstractPage {
     await expect(this.page.locator(selector)).toBeVisible()
   }
 
-  async uploadFileOnElement(selector, pathImage ) {
+  async uploadFileOnElement(selector ) {
     const filePath = path.resolve('./test-data/images/document.jpg');
     return this.page
       .locator(selector)

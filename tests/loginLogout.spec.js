@@ -16,7 +16,7 @@ test.describe('login/logout', async () => {
     dashboardPage = new DashboardPage(page);
   });
 
-  test.afterEach(async ({ page }) => {
+  test.afterEach(async () => {
     await apiHelpers.logoutCustomer();
   })
 

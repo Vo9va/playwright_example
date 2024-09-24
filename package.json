@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "test": "cross-env npx playwright test --config=playwright.config.js"
+    "test": "npx playwright test --config=playwright.config.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.47.1",

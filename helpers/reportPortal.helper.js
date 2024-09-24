@@ -11,11 +11,12 @@ class ReportPortalHelper {
       mode: 'DEFAULT',
       debug: false,
       attributes: TAG !== undefined ? [{ key: 'tag', value: TAG }] : [],
+      includeTestSteps: true,
     };
   }
 
   async logInfo(message) {
-    console.log(message);
+    // console.log(message);
     ReportingApi.log('info', message);
   }
 
