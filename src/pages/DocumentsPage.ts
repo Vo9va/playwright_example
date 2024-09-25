@@ -1,7 +1,8 @@
-import AbstractPage from '../pages/AbcstractPage';
+import { Page } from '@playwright/test';
+import AbstractPage from './AbcstractPage';
 
 export class DocumentsPage extends AbstractPage {
-  constructor(page) {
+  constructor(page: Page) {
     super(page);
   }
 

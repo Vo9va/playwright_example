@@ -1,7 +1,8 @@
-import AbstractPage from '../pages/AbcstractPage';
+import { Page } from '@playwright/test';
+import AbstractPage from './AbcstractPage';
 
 export class HomePage extends AbstractPage {
-  constructor(page) {
+  constructor(page: Page) {
     super(page);
   }
 
@@ -24,7 +25,7 @@ export class HomePage extends AbstractPage {
   async checkLoginDialogIsDisplayed() {
     await this.checkElementIsDisplayed(this.loginDialog);
   }
-  async checkTitleEqualTo(value) {
+  async checkTitleEqualTo(value: string) {
     await this.checkTitleAreEqual(value);
   }
 }

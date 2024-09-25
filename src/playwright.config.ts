@@ -5,6 +5,7 @@ const REPORT = process.env.REPORT || '';
 
 export default defineConfig({
   testDir: './tests',
+  testMatch:'*spec.ts',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: 0,
@@ -14,11 +15,12 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     // video: 'on',
-    workers: 3,  // паралеьность, работает при парметре тру в fullyParallel
   },
+  workers: 3,  // паралеьность, работает при парметре тру в fullyParallel
   projects: [
     {
-      use: { ...devices['Desktop Chrome'] },
+      name: 'Chrome',
+      use: { ...devices['Chrome'] },
     },
     // {
     //   name: 'Mobile_Chrome',

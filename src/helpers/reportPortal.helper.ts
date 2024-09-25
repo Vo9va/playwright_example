@@ -1,4 +1,5 @@
-import { ReportingApi } from '@reportportal/agent-js-playwright';
+import {LOG_LEVELS, ReportingApi} from '@reportportal/agent-js-playwright';
+
 const TAG = process.env.TAG;
 
 class ReportPortalHelper {
@@ -15,8 +16,8 @@ class ReportPortalHelper {
     };
   }
 
-  async logInfo(message) {
-    ReportingApi.log('info', message);
+  async logInfo(message: any) {
+    ReportingApi.log(LOG_LEVELS.INFO, message);
   }
 
 }
