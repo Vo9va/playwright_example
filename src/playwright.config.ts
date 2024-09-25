@@ -19,7 +19,7 @@ export default defineConfig({
   workers: 3,  // паралеьность, работает при парметре тру в fullyParallel
   projects: [
     {
-      name: 'Chrome',
+      name: 'Chromium',
       use: { ...devices['Chrome'] },
     },
     // {
