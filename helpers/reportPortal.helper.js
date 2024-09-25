@@ -16,7 +16,6 @@ class ReportPortalHelper {
   }
 
   async logInfo(message) {
-    // console.log(message);
     ReportingApi.log('info', message);
   }
 

@@ -2,7 +2,6 @@ import { test } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage'
 import { DashboardPage } from '../pages/DashboardPage'
-import { apiHelpers } from "../helpers/apiHelpers";
 
 test.describe.only('login/logout', () => {
   let dashboardPage;

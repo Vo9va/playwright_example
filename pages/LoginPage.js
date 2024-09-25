@@ -1,7 +1,6 @@
 import AbstractPage from '../pages/AbcstractPage';
 import { apiHelpers } from '../helpers/apiHelpers';
 import agent from '../helpers/agent.helper';
-import { log } from "util";
 
 const cookie = require('cookie');
 
